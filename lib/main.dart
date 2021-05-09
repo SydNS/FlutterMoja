@@ -13,12 +13,16 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black12,
-        appBar:AppBar(title: Text("Deans first fluttter"),
+        appBar:AppBar(title: Text("Deans first flutter"),
           backgroundColor: Colors.blueGrey,
         ),
-        body:Center(
-          child: Image.asset('images/quotes.jpg',),
+        body:Column(
+          children: [
+            Card(
+              
+            )
 
+          ],
         ) ,
       ),
     );
