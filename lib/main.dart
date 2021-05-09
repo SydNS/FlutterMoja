@@ -11,6 +11,8 @@ void main() {
                 backgroundColor: Colors.blueGrey,
               ),
               body:Center(
+                child: Image.asset('images/quotes.jpg'),
+
 
               ) ,
             ),
