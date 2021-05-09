@@ -31,9 +31,11 @@ class MyApp extends StatelessWidget{
         ),
         body:Column(
           children: [
-            Card(child: Text('Hebron'),
-
-            )
+            Card(child:Image.asset('images/quotes.jpg'),elevation: 10,   ),
+            Card(child:Image.asset('images/quotes.jpg'),elevation: 10,   ),
+            Card(child:Image.asset('images/quotes.jpg'),elevation: 10,   ),
+            Card(child:Image.asset('images/quotes.jpg'),elevation: 10,   ),
+            Card(child:Image.asset('images/quotes.jpg'),elevation: 10,   )
 
           ],
         ) ,
