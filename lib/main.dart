@@ -2,24 +2,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyHome());
       }
+
+class MyHome extends StatelessWidget {
+  const MyHome({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+        title: "DEan",
+      home: MyApp(),
+
+    );
+  }
+}
 
 class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return  Scaffold(
+      body: Scaffold(
         backgroundColor: Colors.black12,
         appBar:AppBar(title: Text("Deans first flutter"),
           backgroundColor: Colors.blueGrey,
         ),
         body:Column(
           children: [
-            Card(
-              
+            Card(child: Text('Hebron'),
+
             )
 
           ],
