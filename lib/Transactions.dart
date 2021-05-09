@@ -2,7 +2,7 @@ class Transactions{
   String id;
   int amount;
   String title;
-  DateTime dateTime;
+  String dateTime;
 
   Transactions(this.id,this.dateTime,this.amount,this.title);
 }
