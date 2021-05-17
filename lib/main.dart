@@ -28,24 +28,44 @@ class MyApp extends StatelessWidget{
     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Scaffold(
         backgroundColor: Colors.black12,
         appBar:AppBar(title: Text("Deans first flutter"),
           backgroundColor: Colors.black,
         ),
         body:Column(
-          children: [
-            Card(
-              child: Image.asset('images/quotes.jpg'), elevation: 10 ),
-
+            children: <Widget>[
+              Container(child:  Card(
+                  child: Image.asset('images/quotes.jpg'), elevation: 10 ),
+              ),
+              Column(
+                children: transactions.map((e){
+                    return Card(
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text(e.title),
+                              width: 50,
+                            ),
+                            Column(
+                              children: [
+                                Text("WEWERWE")
+                              ],
+                            )
+                          ],
+                        ), elevation: 10, );
+                }).toList(),)
           ],
         ) ,
-      ),
+
     );
   }
 }
