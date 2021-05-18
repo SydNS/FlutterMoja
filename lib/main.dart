@@ -10,98 +10,82 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginDemo(),
+      home: MyHom(),
     );
   }
 }
 
-class LoginDemo extends StatefulWidget {
-  @override
-  _LoginDemoState createState() => _LoginDemoState();
-}
+class MyHom extends StatelessWidget {
+  const MyHom({Key key}) : super(key: key);
 
-class _LoginDemoState extends State<LoginDemo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Sample App'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.only(left: 20.0, right: 30.0),
-          ),
-          onPressed: () {},
-          child: Text('Hello'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+        title: "DEan",
+      home: MyApp(),
+
     );
   }
-
-
 }
-// class MyHome extends StatelessWidget {
-//   const MyHome({Key key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//         title: "DEan",
-//       home: MyApp(),
-//
-//     );
-//   }
-// }
-//
-// class MyApp extends StatelessWidget{
-//
-//   final List<Transactions> transactions=[
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//     Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
-//   ];
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Scaffold(
-//         backgroundColor: Colors.black12,
-//         appBar:AppBar(title: Text("Deans first flutter"),
-//           backgroundColor: Colors.black,
-//         ),
-//         body:Column(
-//             children: <Widget>[
-//               Container(child:  Card(
-//                   child: Image.asset('images/quotes.jpg'), elevation: 10 ),
-//               ),
-//               Column(
-//                 children: transactions.map((e){
-//                     return Card(
-//                         child: Row(
-//                           children: <Widget>[
-//                             Container(
-//                               child: Text(e.title),
-//                               width: 50,
-//                             ),
-//                             Column(
-//                               children: [
-//                                 Text("WEWERWE"),
-//                               ],
-//                             )
-//                           ],
-//                         ), elevation: 10, );
-//                 }).toList(),)
-//           ],
-//         ) ,
-//
-//     );
-//   }
-// }
-//
+
+class MyApp extends StatelessWidget{
+
+  final List<Transactions> transactions=[
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+    Transactions(1, '12/2/2020', 20000, 'bootsandsneakers'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+        backgroundColor: Colors.black12,
+        appBar:AppBar(title: Text("Deans first flutter"),
+          backgroundColor: Colors.black,
+        ),
+        body:Column(
+            children: <Widget>[
+              Container(child:  Card(
+                  child: Image.asset('images/quotes.jpg'), elevation: 10 ),
+              ),
+
+              Column(
+                children: transactions.map((e){
+                    return Card(
+                      
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text(e.title),
+
+                            ),
+
+                            Column(
+                              children: [
+                                Text(e.dateTime),
+                                Text(e.amount.toString()),
+                                Text(e.dateTime),
+                                // ignore: deprecated_member_use
+                                RaisedButton(onPressed: (){
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context)=>SecndPage()),
+                                  );
+                                }),
+                              ],
+                            )
+                          ],
+                        ), elevation: 10, );
+                }).toList(),)
+          ],
+        ) ,
+
+    );
+  }
+}
