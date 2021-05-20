@@ -52,7 +52,8 @@ class MyApp extends StatelessWidget{
         appBar:AppBar(title: Text("Deans first flutter"),
           backgroundColor: Colors.black,
         ),
-        body:Column(
+        body:SingleChildScrollView(
+          child: Column(
             children: <Widget>[
               Container(child:  Card(
                   child: Image.asset('images/quotes.jpg'), elevation: 10 ),
@@ -60,33 +61,34 @@ class MyApp extends StatelessWidget{
 
               Column(
                 children: transactions.map((e){
-                    return Card(
-                      
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              child: Text(e.title),
+                  return Card(
 
-                            ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          child: Text(e.title),
 
-                            Column(
-                              children: [
-                                Text(e.dateTime),
-                                Text(e.amount.toString()),
-                                Text(e.dateTime),
-                                // ignore: deprecated_member_use
-                                RaisedButton(onPressed: (){
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context)=>SecndPage()),
-                                  );
-                                }),
-                              ],
-                            )
+                        ),
+
+                        Column(
+                          children: [
+                            Text(e.dateTime),
+                            Text(e.amount.toString()),
+                            Text(e.dateTime),
+                            // ignore: deprecated_member_use
+                            RaisedButton(onPressed: (){
+                              Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>SecndPage()),
+                              );
+                            }),
                           ],
-                        ), elevation: 10, );
+                        )
+                      ],
+                    ), elevation: 10, );
                 }).toList(),)
-          ],
-        ) ,
+            ],
+          ) ,
+        )
 
     );
   }
