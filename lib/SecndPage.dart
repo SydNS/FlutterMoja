@@ -34,7 +34,8 @@ class _MyApp extends State {
               icon: Icon(Icons.cake),
               // ignore: deprecated_member_use
               title: Text("Birthdays")),
-          BottomNavigationBarItem(icon: Icon(Icons.cloud), title: Text("Data")),
+          // ignore: deprecated_member_use
+          BottomNavigationBarItem(icon: Icon(Icons.cloud), title: Text("Data"),),
         ],
           currentIndex : _currentPage,
           fixedColor : Colors.red,
